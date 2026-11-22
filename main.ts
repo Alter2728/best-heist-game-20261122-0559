@@ -13,6 +13,12 @@ import { buildDossier } from "./vendor/makefun-game.ts";
 const repoRoot = fileURLToPath(new URL(".", import.meta.url));
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 
+// Fail loudly and early if the game is not where the hand-in expects it,
+// rather than dying inside a recursive copy with a bare ENOENT.
+if (!existsSync(join(repoRoot, "game", "index.html"))) {
+  throw new Error("game/index.html not found beside main.ts — nothing to hand in");
+}
+
 mkdirSync(outputDir, { recursive: true });
 cpSync(join(repoRoot, "game"), join(outputDir, "game"), { recursive: true });
 mkdirSync(join(outputDir, "screenshots"), { recursive: true });
