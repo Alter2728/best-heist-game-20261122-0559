@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Gilded Hour — a museum heist</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0b0e14; color: #e8e2d4; font-family: Georgia, "Times New Roman", serif; }
+  #wrap { max-width: 960px; margin: 0 auto; padding: 10px 8px 18px; }
+  canvas { display: block; width: 100%; height: auto; background: #11151f; border: 2px solid #c9a227; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+  #help { margin-top: 10px; font-size: 14px; line-height: 1.55; color: #b9b2a0; }
+  #help b { color: #e8c766; font-weight: normal; }
+  h1 { font-size: 20px; margin: 4px 0 8px; letter-spacing: .06em; color: #e8c766; font-weight: normal; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>THE GILDED HOUR</h1>
+  <canvas id="game" width="960" height="640"></canvas>
+  <div id="help">
+    <b>WASD / arrows</b> move &nbsp; <b>Shift</b> sneak (slow, harder to spot) &nbsp; <b>E</b> take loot / pick the vault lock &nbsp;
+    <b>Q</b> smoke bomb &nbsp; <b>F</b> toss a decoy coin toward the mouse &nbsp; <b>P</b> pause &nbsp; <b>R</b> restart the night<br>
+    Cross the museum, empty the cases, crack the vault, and slip out the south door before the alarm meter fills.
+    Yellow cones are guard eyes, red cones are cameras. Display cases break line of sight — hug them.
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
